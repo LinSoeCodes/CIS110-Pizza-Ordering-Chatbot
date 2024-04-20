@@ -13,4 +13,8 @@ method = input("\nDo you want to do carry out or delivery?:  ")
 salesTax = 1.1 
 pizzaCost = 14.99
 total = (pizzaCost * quantity) * salesTax
-print(total) 
+
+print("-" * 10)
+print(f"Thank you, {username}, for your order.") 
+print(f"Your {quantity} {size} {flavor} pizza(s) with {crustType} crust costs ${total:,.2f}.")
+
