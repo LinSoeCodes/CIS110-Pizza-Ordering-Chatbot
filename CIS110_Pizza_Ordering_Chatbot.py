@@ -8,8 +8,8 @@ if userName.lower() == "soe lin":
 else:
     print(f"\nHello, {userName}. Nice to meet you! It's my pleasure to assist you ordering a pizza")   
 size = input("\nWhat size do you want? Enter small, medium, or large: ")
-while len(size) == 0:
-    size = input ("Invalid size! Please enter small, medium, or large: ")
+while size.lower() not in ["small", "medium", "large"]:
+    size = input ("We dont have that size! Please enter small, medium, or large: ")
 flavor = input("\nEnter the flavor of pizza: ")
 while len(flavor) == 0:
     flavor = input ("Where is the flavor? You want a cardboard? To get to flavor town, you need to type in a valid flavor: ")
@@ -18,8 +18,13 @@ crustType = input("\nWhat type of crust do you want: ")
 while len(crustType) == 0:
     crustType = input("If there is no crust, it's like eating a sandwich. Please enter a valid pizza crust: ")
 quantity = input("\nHow many of these do you want to order? Enter a numberic value: ")
+while not quantity.isdigit():
+    quantity = input("Value is not recognzied. Please type in numeral number. 1,2,3,4,5: ")
 quantity = int(quantity)
 method = input("\nDo you want to do carry out or delivery?: ")
+while method not in ["carry out", "delivery"]:
+    method = input("How are you going to get this pizza? Please enter carry out or delivery: ")
+
 
 if method.lower() == "delivery":
     deliveryFee = 5 
